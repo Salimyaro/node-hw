@@ -1,0 +1,28 @@
+{
+  "name": "01-node-basics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Salimyaro/node-hw.git"
+  },
+  "author": "salimov_yr (3508880@i.ua)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Salimyaro/node-hw/issues"
+  },
+  "homepage": "https://github.com/Salimyaro/node-hw#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "dependencies": {
+    "commander": "^7.0.0",
+    "shortid": "^2.2.16"
+  }
+}
