@@ -37,7 +37,7 @@ async function getContactById(contactId, path = contactsPath) {
       const contacts = await getContactsList(path);
       const contact = contacts.find((c) => c.id.toString() === contactId);
       if (!contact)
-        throw { message: `No contact found with ID '${contactId}'` };
+        throw { message: `No contact was found with ID '${contactId}'` };
       console.log(contact);
       return contact;
     } else {
@@ -57,11 +57,11 @@ async function removeContact(contactId, path = contactsPath) {
       );
       if (contacts.length === filteredContacts.length)
         throw {
-          message: `No contact found with ID '${contactId}', and no contact was deleted`,
+          message: `No contact was found with ID '${contactId}', and no contact was deleted`,
         };
       await fs.writeFile(path, JSON.stringify(filteredContacts));
       console.log(`Contact with ID '${contactId}' was removed successfully`);
-      listContacts(contactsPath);
+      listContacts(path);
     } else {
       throw { message: `Wrong path: '${path}'` };
     }
@@ -81,7 +81,7 @@ async function addContact(newOneContact, path = contactsPath) {
       const newContacts = [...contacts, contactToAdd];
       await fs.writeFile(path, JSON.stringify(newContacts));
       console.log(`Contact was added successfully`);
-      listContacts(contactsPath);
+      listContacts(path);
     } else {
       throw { message: `Wrong path: '${path}'` };
     }
